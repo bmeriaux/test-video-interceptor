@@ -24,7 +24,7 @@ export namespace Interceptor {
   export function factory (): Interceptor {
     return {
       execute: async (urlPath: string, headers: Util.Dictionary<string>): Promise<Interceptor.Response> => {
-        const targetBaseUrl = process.env.TARGET_URL || 'https://bitdash-a.akamaihd.net'
+        const targetBaseUrl = process.env.TARGET_HOST || 'https://bitdash-a.akamaihd.net'
         const targetUrl = `${targetBaseUrl}${urlPath}`
         headers.host = new URL(targetBaseUrl).host
         console.log(`[IN][${getMediaContext(targetUrl)}] ${targetUrl}`)
