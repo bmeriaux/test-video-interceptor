@@ -27,4 +27,18 @@ describe('Interceptor', () => {
       expect(actual).to.deep.equal(expectedReponse)
     })
   })
+  describe('getMediaContext', () => {
+    it('returns MANIFEST when url ends with m3u8', () => {
+      expect(Interceptor.getMediaContext('https://bitdash-a.akamaihd.net/content/sintel/hls/audio/surround/en/320kbit.m3u8'))
+        .to.equal('MANIFEST')
+    })
+    it('returns SEGMENT when url ends with ts', () => {
+      expect(Interceptor.getMediaContext('https://bitdash-a.akamaihd.net/content/sintel/hls/audio/stereo/en/128kbit/seq-1.ts'))
+        .to.equal('SEGMENT')
+    })
+    it('returns SUBTITLE when url ends with vtt', () => {
+      expect(Interceptor.getMediaContext('https://bitdash-a.akamaihd.net/content/sintel/hls/subtitles_es.vtt'))
+        .to.equal('SUBTITLE')
+    })
+  })
 })
