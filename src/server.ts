@@ -3,7 +3,7 @@ import { Interceptor } from './interceptor'
 
 export async function createServer (port: number, interceptor: Interceptor): Promise<Server> {
   const server = new Server({ port, compression: false })
-  if (process.env.NODE_ENV !== 'test') {
+  if (process.env.NODE_ENV === 'dev') {
     await server.register({
       plugin: require('hapi-pino')
     })
