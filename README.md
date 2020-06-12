@@ -1,4 +1,6 @@
 # About
+![](https://github.com/bmeriaux/test-video-interceptor/workflows/CI/badge.svg)
+
 small request interceptor for m3u8 stream
 
 ## How To
