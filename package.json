@@ -47,7 +47,7 @@
   },
   "dependencies": {
     "@hapi/hapi": "^19.1.1",
-    "got": "^11.3.0",
+    "got": "^11.8.5",
     "hapi-pino": "^8.0.1"
   },
   "mocha": {
